@@ -1,1 +1,16 @@
+# env
+.env
+.env.build
+
+# dependencies
+node_modules
+package-lock.json
+yarn.lock
+!/yarn.lock
+test/node_modules
+
 .DS_Store
+
+# Editors
+**/.idea
+.vscode

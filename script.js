@@ -4,33 +4,24 @@ const app = (() => {
   const ajax = () => {
     fetch('./data.json', {
       mode: 'no-cors'
-    }).then(function(response) {
+    }).then(function (response) {
       // The API call was successful!
       return response.json();
-    }).then(function(data) {
+    }).then(function (data) {
       // This is the JSON from our response
-      // console.log(data);
       section(data)
 
       cache.array = data
       // section(cache.array)
 
-    }).catch(function(err) {
+    }).catch(function (err) {
       // There was an error
       console.warn('Something went wrong.', err);
     });
-
-    if(window.innerWidth > 375){
-      let image = document.querySelector('.background');
-  image.src="images/bg-header-desktop.svg"
-  imaage.classList.add('background')
-
-    }
-
   }
 
   const cache = {
-    main: document.querySelector('main'),
+    main: document.querySelector('.container'),
     array: []
   }
 
@@ -38,8 +29,6 @@ const app = (() => {
   //map over the object and create the html
 
   const section = (arr) => {
-    console.log(typeof arr, arr)
-
     arr.map((item, index) => {
 
       let language = item.languages;
@@ -55,14 +44,14 @@ const app = (() => {
 
         <div class="column1" >
           <div class="logo" data-id=${item.id}>
-              <embed src=${item.logo}>
+              <img src=${item.logo}>
           </div>
           <div class="title-info">
             <ul class="job-description top">
               <li class="company">${item.company} </li>
-              <li class = ${item.new ? 'new' : 'blank'}> ${item.new?'News':""}</li>
+              <li class = ${item.new ? 'new' : 'blank'}> ${item.new ? 'News' : ""}</li>
 
-              <li class = ${item.featured ? 'featured' : 'blank'}>${item.featured ? 'Feature':""}</li>
+              <li class = ${item.featured ? 'featured' : 'blank'}>${item.featured ? 'Feature' : ""}</li>
             </ul>
             <h2>${item.position}</h2>
             <ul class= "job-description bottom">
@@ -107,17 +96,17 @@ const app = (() => {
 
 
 
-//switch the dataAttribute run the html again with the correct fields
+    //switch the dataAttribute run the html again with the correct fields
     switch (attr) {
       case 'role':
         section(role);
         break;
-        case "level":
-          section(level);
+      case "level":
+        section(level);
         break;
-        case "language":
-          section(languages)
-          default:
+      case "language":
+        section(languages)
+      default:
 
     }
 
