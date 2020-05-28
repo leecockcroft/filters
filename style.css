@@ -9,11 +9,13 @@ body{
   font-family:spartan;
   Font size: 15px;
   background:hsl(180, 52%, 96%);
+  max-width:1440px;
+  margin: auto;
 }
 
 header{
 
-  background:'/images/bh-header-mobile.svg';
+  background:url('/images/bh-header-mobile.svg');
 }
 
 section{
@@ -25,7 +27,7 @@ section{
       border: 1px solid black;
       padding-bottom: 20px;
       margin-bottom: 63px;
-      width: 90%;
+
       margin: 52px auto;
 }
 
@@ -84,6 +86,9 @@ display:inline
 
 }
 
+
+
+
 .column2{
 display:flex;
 flex-wrap: wrap;
@@ -100,8 +105,70 @@ flex-wrap: wrap;
   cursor: pointer;
   display:block;
   border: 1px solid black;
+  font-weight: 900;
 
 }
+
+
+/* @media only screen and (min-width:700px){
+  .background{
+    width:100%;
+  }
+.logo{
+  position: static;
+}
+.column1{
+  display:flex;
+  justify-content: space-between;
+  width:50%;
+  align-items: center;
+}
+
+} */
+
+
+main > section:first-child,main > section:nth-child(2){
+border-left: 7px solid rgb(100,161,158);
+
+}
+
+@media only screen and (min-width:1000px){
+  section{
+    padding: 20px 34px;
+  }
+  .background{
+    width:100%;
+  }
+.logo{
+  position: static;
+}
+.column1{
+  display:flex;
+  justify-content: space-between;
+  width:30%;
+  align-items: center;
+  border-bottom:0;
+}
+
+}
+
+/* @media only screen and (min-width: 380px){
+
+section{
+      padding: 22px 34.9px;
+}
+.column1{
+  width:38%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.background{
+  width:100%;
+}
+
+} */
 
 /*
 https://sports.ladbrokes.com/en/mobileportal/register

@@ -20,6 +20,13 @@ const app = (() => {
       console.warn('Something went wrong.', err);
     });
 
+    if(window.innerWidth > 375){
+      let image = document.querySelector('.background');
+  image.src="images/bg-header-desktop.svg"
+  imaage.classList.add('background')
+
+    }
+
   }
 
   const cache = {
